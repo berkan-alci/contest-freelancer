@@ -9,6 +9,7 @@ declare global {
 
 jest.mock('../nats-wrapper');
 
+//Init mongo & env variables before testing
 let mongo: any;
 beforeAll(async () => {
     process.env.JWT_KEY = "asdf";
@@ -18,6 +19,7 @@ beforeAll(async () => {
     await mongoose.connect(mongoUri);
 });
 
+//Clear each collection before running tests
 beforeEach(async () => {
     const collections = await mongoose.connection.db.collections();
 
@@ -26,12 +28,14 @@ beforeEach(async () => {
     }
 });
 
+//Close the connection after testing.
 afterAll(async () => {
     await mongo.stop();
     await mongoose.connection.close();
 }, 150000);
 
 
+//get cookie in valid format for testing with optional userId.
 global.signin = (id?: string) => {
     const token = jwt.sign({ id: id || new mongoose.Types.ObjectId().toHexString(), email: 'test@test.com' }, process.env.JWT_KEY!)
     const sessionJSON = JSON.stringify({ jwt: token });

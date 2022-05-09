@@ -29,14 +29,15 @@ const start = async () => {
     const url = process.env.MONGO_URI
 
     try {
+        //Connection to nats
         await natsWrapper.connect(process.env.NATS_CLUSTER_ID, process.env.NATS_CLIENT_ID, process.env.NATS_URL);
         natsWrapper.client.on('close', () => {
             console.log('NATS connection closed!');
             process.exit();
         });
+        //Gracefull shutdown to nats
         process.on('SIGINT', () => natsWrapper.client.close());
         process.on('SIGTERM', () => natsWrapper.client.close())
-        
 
         await mongoose.connect(url);
     } catch (err) {

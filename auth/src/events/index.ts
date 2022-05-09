@@ -1,0 +1,1 @@
+export { default as UserCreatedPublisher } from './publishers/user-created-publisher';
