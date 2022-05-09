@@ -62,7 +62,10 @@ This diagram shows the specific routes for each service.
 This diagarm shows an example of how data would go around in an asynchronous event driven architecture.
 ![Event flow example](https://github.com/berkan-alci/contest-freelancer/blob/main/diagrams/event-flow-example.png)
 
-## Additional:
+## Additional info:
 
--   Custom NPM package: `LINK WILL COME SOON`
--   Technical debt: - No custom Publisher/Listener service - This is meant to provide high availability and almost 100% uptime. It's not built in here due to the fact it's extremely complicated and not worth for a contest. - The service itself would also have to be cross language functional.
+-   Custom NPM package: https://www.npmjs.com/package/@tt-ms-common/contest-allactivity
+-   Technical debt:
+    -   No custom Publisher/Listener service
+        -   This is meant to provide high availability and almost 100% uptime. It's not built in here due to the fact it's extremely complicated and not worth for a contest.
+        -   The service itself would also have to be cross language functional.
