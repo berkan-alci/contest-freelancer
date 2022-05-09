@@ -64,7 +64,8 @@ This diagarm shows an example of how data would go around in an asynchronous eve
 
 ## Additional info:
 
--   Custom NPM package: https://www.npmjs.com/package/@tt-ms-common/contest-allactivity
+-   Custom NPM package: https://www.npmjs.com/package/@cgestione/fl-common
+-   NPM package git repo: https://github.com/berkan-alci/contest-fl-common
 -   Technical debt:
     -   No custom Publisher/Listener service
         -   This is meant to provide high availability and almost 100% uptime. It's not built in here due to the fact it's extremely complicated and not worth for a contest.

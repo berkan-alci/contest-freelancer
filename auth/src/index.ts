@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
 import { app } from './app';
-import { natsWrapper } from '@tt-ms-common/contest-allactivity';
+import { natsWrapper } from '@cgestione/fl-common';
 
 
 

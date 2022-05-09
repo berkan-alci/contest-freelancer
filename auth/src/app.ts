@@ -3,7 +3,7 @@ import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
-import { errorHandler, NotFoundError, currentUser } from '@tt-ms-common/contest-allactivity';
+import { errorHandler, NotFoundError, currentUser } from '@cgestione/fl-common';
 
 
 
