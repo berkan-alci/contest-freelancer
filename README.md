@@ -4,6 +4,23 @@
 
 The description for the project: https://www.freelancer.com/contest/2085151
 
+## My input & reply on the contest:
+
+"I've carefully read your contest description. I'll implement whatever you want, however in addition I'll make the task more difficult for myself. The added complexity will be the following:
+
+-   Backend will be an asynchronous event driven (NATS Streaming server) architecture
+-   Will use SQL (Postgres) & NoSQL (mongodb) in combination.
+-   Will add authentication
+-   Will add automated testing
+-   Will add a custom npm package for code re-use & clean code in general
+-   Will add a CI/CD pipeline.
+-   Will make all of this run in pods using kubernetes.
+-   Will create an authentication service.
+-   Will implement container orchestration (skaffold)
+-   Will make it that if the creating logs service is down, you can still view your logs.
+
+TL;DR: I'm adding complexity in every aspect except the front-end (a micro frontend combined with microservice backend is overkill on overkill) to showcase my abilities and distinguish myself from the rest."
+
 ## View project:
 
 -   will be added soon
