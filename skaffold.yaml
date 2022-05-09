@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: berkanalci/tt-ms-auth
+    - image: berkanalci/aa-auth
       context: auth
       docker:
         dockerfile: Dockerfile
