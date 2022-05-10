@@ -4,6 +4,7 @@ import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
 import { errorHandler, NotFoundError, currentUser } from '@cgestione/fl-common';
+import { createLogRouter, deleteLogRouter, updateLogRouter } from './routes';
 const app = express();
 
 
@@ -18,6 +19,9 @@ app.use(cookieSession({
 //middlewares
 app.use(currentUser);
 //routes
+app.use(createLogRouter);
+app.use(updateLogRouter);
+app.use(deleteLogRouter);
 
 //Handling asynchronous errors
 app.all('*', async (req, res, next) => {

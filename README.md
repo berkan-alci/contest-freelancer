@@ -70,3 +70,4 @@ This diagarm shows an example of how data would go around in an asynchronous eve
     -   No custom Publisher/Listener service
         -   This is meant to provide high availability and almost 100% uptime. It's not built in here due to the fact it's extremely complicated and not worth for a contest.
         -   The service itself would also have to be cross language functional.
+    -   I haven't created a way for people to have an expiry date that isn't defined yet. This is a pretty easy fix, however unncessary for the demo.
