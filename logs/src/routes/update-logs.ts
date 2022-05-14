@@ -12,23 +12,27 @@ router.put('/api/logs/:logId', requireAuth, [
     body('title')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Title is required'),
     body('description')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Description is required'),
     body('startsAt')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Start date is required'),
     body('expiresAt')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('End date is required'),
 ], validateRequest, async (req: Request, res: Response) => {
-    const log = await Logs.findById(req.params.id);
+    const log = await Logs.findById(req.params.logId);
 
-    if (!log) {
+    if (!log || log === null) {
         throw new NotFoundError();
     }
 

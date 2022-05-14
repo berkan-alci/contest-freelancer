@@ -3,7 +3,7 @@ import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 interface LogsAttrs {
     title: string;
-    description: number;
+    description: string;
     startsAt: string;
     expiresAt: string;
     user: { id: string };

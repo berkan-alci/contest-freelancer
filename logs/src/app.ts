@@ -18,6 +18,7 @@ app.use(cookieSession({
 
 //middlewares
 app.use(currentUser);
+
 //routes
 app.use(createLogRouter);
 app.use(updateLogRouter);

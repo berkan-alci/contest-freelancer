@@ -11,18 +11,22 @@ router.post('/api/logs', requireAuth, [
     body('title')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Title is required'),
     body('description')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Description is required'),
     body('startsAt')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('Start date is required'),
     body('expiresAt')
         .not()
         .isEmpty()
+        .isString()
         .withMessage('End date is required'),
 ], validateRequest, async (req: Request, res: Response) => {
 
@@ -32,7 +36,7 @@ router.post('/api/logs', requireAuth, [
         startsAt: req.body.startsAt,
         expiresAt: req.body.expiresAt,
         user: {
-            id: req.body.currentUser!.id
+            id: req.currentUser!.id
         }
     });
 

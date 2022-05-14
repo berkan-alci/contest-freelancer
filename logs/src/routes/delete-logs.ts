@@ -11,7 +11,7 @@ router.delete('/api/logs/:logId', requireAuth, async (req: Request, res: Respons
     const log = await Logs.findById(logId)
     
 
-    if (!log) {
+    if (!log || log === null) {
         throw new NotFoundError();
     }
 
