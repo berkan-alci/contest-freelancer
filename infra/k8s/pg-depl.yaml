@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg
+  template:
+    metadata:
+      labels:
+        app: pg
+    spec:
+      containers:
+        - name: pg
+          image: postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pg-srv
+spec:
+  selector:
+    app: pg
+  ports:
+    - name: pg
+      protocol: TCP
+      port: 5432
+      targetPort: 5432

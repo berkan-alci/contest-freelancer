@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: view-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: view
+  template:
+    metadata:
+      labels:
+        app: view
+    spec:
+      containers:
+        - name: view
+          image: berkanalci/aa-view
+          env:
+            - name: NATS_URL
+              value: 'http://nats-srv:4222'
+            - name: NATS_CLUSTER_ID
+              value: contest
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: PG_URI
+              value: 'postgres://postgres:root@pg-srv:5432/contest' #NOTE: in prod you'd have some vars in an ENV passed into the value field.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: view-srv
+spec:
+  selector:
+    app: view
+  ports:
+    - name: view
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

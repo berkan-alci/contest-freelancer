@@ -17,3 +17,17 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
+          - path: /api/logs/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: logs-srv
+                port:
+                  number: 3000
+          - path: /api/view/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: view-srv
+                port:
+                  number: 3000
